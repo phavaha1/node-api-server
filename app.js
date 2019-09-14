@@ -11,4 +11,4 @@ app.get('/', function (req, res) {
   res.send(status)
 })
 
-app.listen(3000)
+app.listen(process.env.PORT || 5000)
