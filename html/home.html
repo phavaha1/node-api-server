@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script src="../js/jquery-3.4.1.min.js"></script>
+    </head>
+    <body>
+        <h1>
+            Đề tài nghiên cứu khoa học trường THCS Quang Trung
+        </h1>
+        <h2>
+            Tổng quan về đề tài nghiên cứu:
+            <ul>
+                <li>Sử dụng năng lượng sạch</li>
+                <li>Tích hợp các cảm biến cho phép hệ thống tự hoạt động</li>
+                <li>Cho phép điều khiển ở cả chế độ truyền thống( qua phím điều khiển) và hiện đại( qua smart phone)</li>
+                <li>Ứng dụng công nghệ 4.0 cho phép điều khiển qua internet từ bất kì nơi nào</li>
+            </ul>
+        </h2>
+        <h2>
+            Bấm bật tắt để điều khiển hệ thống đèn:
+            <button id="control">
+                On/Off
+            </button>
+        </h2>
+    </body>
+    <script>
+        $('button#control').click(function(){
+            $.post('https://thcs-quangtrung.herokuapp.com/status', function(data, status){
+                console.log(data, status);
+            });
+        })
+    </script>
+</html>
