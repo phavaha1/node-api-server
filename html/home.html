@@ -2,13 +2,19 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="/jquery-3.4.1.min.js" type="text/javascript"></script>
+        <style>
+            h2 {color: green;}
+            h3 {color: green;}
+        </style>
     </head>
     <body>
-        <h1>
+        <h1 
+            style="font-style: italic; color: green;">
             Đề tài nghiên cứu khoa học trường THCS Quang Trung
         </h1>
+        <h2 style="text-align: center;"><img src="http://tk-thcsquangtrung.haiduong.edu.vn/null/viet_tin/images/23(1).jpg" style="width: 50%;"></h2>
         <h2>
-            Tổng quan về đề tài nghiên cứu:
+            1. Tổng quan về đề tài nghiên cứu:
         </h2>
         <p>
             <ul>
@@ -19,15 +25,31 @@
             </ul>
         </p>
         <h2>
-            Bấm bật tắt để điều khiển hệ thống đèn:
-            <button id="control">
-                On/Off
-            </button>
+            2. Ứng dụng công nghệ 4.0 trong việc điều khiển:
+            <h3>
+                2.1. Chi tiết công nghệ:
+                
+            </h3>
+            <p>
+                <ul>
+                    <li>Kết nối hệ thống bóng đèn với server qua internet.</li>
+                    <li>Gửi request tới server để cập nhật trạng thái của đèn (bật hoặc tắt)</li>
+                    <li>Khi ở chế độ online, bộ điều khiển liên tục đọc trạng thái của bóng đèn từ server để bật hoặc tắt đèn</li>
+                </ul>
+            </p>
+            <h3>
+                2.2. Bấm vào nút On/Off để điều khiển đèn:
+            </h3>
+            <div style="text-align: center;">
+                <button id="control" style="width: 120px; height: 60px;">
+                    On/Off
+                </button>
+            </div>
         </h2>
     </body>
     <script>
         $('button#control').click(function(){
-            $.post('https://thcs-quangtrung.herokuapp.com/status', function(data, status){
+            $.post('http://localhost/status', function(data, status){
                 console.log(data, status);
             });
         })
